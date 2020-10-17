@@ -6,10 +6,10 @@ const port = 3000;
 const mongoose = require("mongoose");
  const mongodburl = process.env.mongodburl||"mongodb://localhost:27017/imageuploader";
 
-mongoose(
+mongoose
   .connect(mongodburl)
   .then(() => console.log("Connected to MongoDB..."))
-  .catch((err) => console.error(err)),{ useNewUrlParser: true } );
+  .catch((err) => console.error(err)),{ useNewUrlParser: true };
 
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({
