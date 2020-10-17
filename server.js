@@ -4,7 +4,7 @@ const app = express();
 const port = 3000;
 
 const mongoose = require("mongoose");
- const mongodburl = process.env.mongodburl||"mongodb://localhost/image_uploader";
+ const mongodburl = process.env.mongodburl||"mongodb://localhost:27017/image_uploader";
 
 mongoose
   .connect(mongodburl)
