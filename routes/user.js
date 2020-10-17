@@ -19,6 +19,9 @@ router.post("/register",async (req,res)=>{
       })
 
 })
+router.get("/",(req,res)=>{
+  res.send("working");
+})
 
 router.post("/login",(req,res)=>{
   User.find({ username: req.body.username })
