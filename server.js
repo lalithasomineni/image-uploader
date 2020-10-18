@@ -3,8 +3,7 @@ const bodyparser = require("body-parser");
 const app = express();
 const port = 3000;
 const mongoose = require("mongoose");
-const mongodburl = process.env.MONGODB_URI||"mongodb://localhost/image_uploader";
-
+const mongodburl = process.env.mongodburl||"mongodb+srv://user:12345@cluster0.mmisy.mongodb.net/<dbname>?retryWrites=true&w=majority"
 mongoose
   .connect(mongodburl, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connected to MongoDB..."))
