@@ -3,7 +3,7 @@ const bodyparser = require("body-parser");
 const app = express();
 const port = 3000;
 const mongoose = require("mongoose");
-const mongodburl = process.env.MONGODB_URI;
+const mongodburl = process.env.MONGODB_URI||"mongodb://localhost/image_uploader";
 
 mongoose
   .connect(mongodburl, { useNewUrlParser: true, useUnifiedTopology: true })
