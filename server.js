@@ -14,9 +14,6 @@ app.use(bodyparser.urlencoded({
   extended: false
 }));
 
-app.get("/", (req, res) => {
-  res.send("<h1>freelancing<h1>");
-});
 
 app.use("/api/users",require("./routes/user"));
 app.use("/api/images",require("./routes/image"));
@@ -24,3 +21,6 @@ app.use("/api/images",require("./routes/image"));
 app.listen(port,()=>{
   console.log("server started...");
 })
+app.get("/", (req, res) => {
+  res.send("<h1>freelancing<h1>");
+});
