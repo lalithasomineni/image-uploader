@@ -3,7 +3,7 @@ const bodyparser = require("body-parser");
 const app = express();
 const port = 3000;
 const mongoose = require("mongoose");
-const mongodburl = process.env.MONGODB_URI||"mongodb+srv://user:12345@cluster0.70k9n.gcp.mongodb.net/image_uploader?retryWrites=true&w=majority";
+const mongodburl = process.env.MONGODB_URI;
 
 mongoose
   .connect(mongodburl, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -14,6 +14,10 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({
   extended: false
 }));
+
+app.get("/", (req, res) => {
+  res.send("<h1>freelancing<h1>");
+});
 
 app.use("/api/users",require("./routes/user"));
 app.use("/api/images",require("./routes/image"));
