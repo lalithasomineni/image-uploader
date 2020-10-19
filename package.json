@@ -17,6 +17,9 @@
     "mongo": "^0.1.0",
     "mongoose": "^5.10.9",
     "multer": "^1.4.2",
-    "nodemon": "^2.0.5"
+    "nodemon": "^2.0.5",
+    "swagger-jsdoc": "^4.3.0",
+    "swagger-ui-express": "^4.1.4",
+    "yamljs": "^0.3.0"
   }
 }
