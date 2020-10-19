@@ -26,3 +26,7 @@ app.use("/api/images",require("./routes/image"));
 app.listen(process.env.PORT || 5000,()=>{
   console.log("server started...");
 })
+
+app.get("/",(req,res)=>{
+  res.send("working...")
+})
