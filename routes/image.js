@@ -16,12 +16,12 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 
 
-router.post("/",auth,upload.array('image',5),async  (req, res, next) => {
+router.post("/",auth,upload.array('image',5),(req, res, next) => {
     let newImage =  new Image({
         image : './'+ req.files.path,
         text: req.body.text
     })
-    await newImage.save().then( (result) =>{
+    newImage.save().then( (result) =>{
             res.send("succesfull");
         }
     ).catch( (err) =>{
