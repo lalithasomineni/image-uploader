@@ -2,9 +2,9 @@ const express = require("express");
 const bodyparser = require("body-parser");
 const app = express();
 //const swaggerjsdoc = require("swagger-jsdoc");
-//const swaggerui = require("swagger-ui-express");
+const swaggerUi = require("swagger-ui-express");
 //const YAML = require("yamljs");
-//const swaggerDocument = YAML.load("./swagger.yaml");
+const swaggerDocument = require('./swagger.json');
 //const port = process.env.port||3000;
 const mongoose = require("mongoose");
 const mongodburl = process.env.mongodburl||"mongodb+srv://user:12345@cluster0.mmisy.mongodb.net/<dbname>?retryWrites=true&w=majority"
@@ -18,6 +18,7 @@ app.use(bodyparser.urlencoded({
   extended: false
 }));
 
+app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 app.use("/api/users",require("./routes/user"));
