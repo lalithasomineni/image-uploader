@@ -2,8 +2,7 @@
   "openapi": "3.0.0",
   "info": {
       "version": "1.0.0",
-      "title": "Seans-TypeScript-NodeJS-CRUD-REST-API-Boilerplate",
-      "description": "A minimal and easy to follow example of what you need to create a CRUD style API in NodeJs using TypeScript",
+      "title": "image_uploader1310",
       "license": {
           "name": "MIT",
           "url": "https://opensource.org/licenses/MIT"
@@ -12,13 +11,13 @@
   "servers": [
       {
           "url": "/",
-          "description": "Local Dev, or from Heroku"
+          "description": "Local Dev"
       }
   ],
   "tags": [
       {
-          "name": "Users",
-          "description": "API for adding users"
+          "name": "image_uploader1310",
+          "description": "API for adding images"
       }
   ],
   "consumes": [
@@ -31,7 +30,7 @@
       "/api/users/register": {
           "post": {
               "tags": [
-                  "Image uploader"
+                  "registration"
               ],
               "summary": "add user",
               "requestBody": {
@@ -80,51 +79,11 @@
                       }
                   },
                   "404": {
-                      "description": "Failed. Cat not found."
-                  }
-              }
-          }
-      },
-      "/api/images": {
-          "post": {
-              "tags": [
-                  "upload"
-              ],
-              "summary": "upload images",
-              "consumes":
-                         "multipart/form-data",
-              "parameters": [
-                  {
-                      "in": "formData",
-                      "name": "image",
-                      "type": "file"
-                  },
-                  {
-                     "in": "formData",
-                     "name": "text",
-                     "type": "string"
-                  }
-              ],
-              "responses": {
-                  "200": {
-                      "description": "OK",
-                      "schema": {
-                          "$ref": "#/definitions/Image"
-                      }
-                  },
-                  "404": {
-                      "description": "Failed. Cat not found."
+                      "description": "Failed."
                   }
               }
           }
       }
-  },
-  "securityDefinitions": {
-  "Bearer": {
-    "type": "apiKey",
-    "name": "Authorization",
-    "in": "header"
-  }
   },
   "definitions": {
       "id": {
